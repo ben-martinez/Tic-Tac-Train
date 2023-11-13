@@ -1,0 +1,1675 @@
+ng diagonals, rows and columns and the square farthest from the center.
+
+Rule 3 (Enhanced):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 2.
+
+Rule 4 (New):
+If opponent has a corner and you do not have an immediate win or block, place your mark in a vacant corner.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Unchanged):
+If there is an empty corner square opposite an opponent's mark, and no other higher priority rules apply, place your mark in that square.
+
+Rule 7 (Unchanged):
+If all corners are taken, and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square
+. However, if an opponent can create a double threat with their next move, block one of the threats according to Rule 2.
+
+Rule 8 (Reduced):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Improved):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This updated rule set considers cases where the opponent has marked a corner or the center and you don't have an immediate win or block, guiding you to plac
+e your mark in a vacant corner (Rule 4). It also minimizes unnecessarily restrictive rules (Rule 8) while maintaining strategic defensive moves, and maximiz
+ing the potential to win at the next turn or block the opponent from winning."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O & O \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   &   \\
+  &   & X \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+O & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+O &   & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2), (2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+  &   &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0), (2, 2)]
+"
+
+The previous rule set is as follows:
+"Based on the game states given, the current rule set can be improved. Below is the modified rule set:
+
+Rule 1 (Improved):
+If your mark can complete a winning line, place your mark in the corresponding empty cell. If multiple potential winning lines exist, prioritize (iterativel
+y) diagonals, rows over columns and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Block your opponent from winning if they can complete a winning line with their next move. If multiple potential winning lines for the opponent exist, prior
+itize (iteratively) blocking diagonals, rows and columns and the square farthest from the center.
+
+Rule 3 (Enhanced):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 2.
+
+Rule 4 (New):
+If opponent has a corner and you do not have an immediate win or block, place your mark in a vacant corner.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Unchanged):
+If there is an empty corner square opposite an opponent's mark, and no other higher priority rules apply, place your mark in that square.
+
+Rule 7 (Unchanged):
+If all corners are taken, and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square
+. However, if an opponent can create a double threat with their next move, block one of the threats according to Rule 2.
+
+Rule 8 (Reduced):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Improved):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This updated rule set considers cases where the opponent has marked a corner or the center and you don't have an immediate win or block, guiding you to plac
+e your mark in a vacant corner (Rule 4). It also minimizes unnecessarily restrictive rules (Rule 8) while maintaining strategic defensive moves, and maximiz
+ing the potential to win at the next turn or block the opponent from winning."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O & O \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   &   \\
+  &   & X \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+O & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+O &   & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2), (2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+  &   &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0), (2, 2)]
+"
+
+The previous rule set is as follows:
+"Based on the game states given, the current rule set can be improved. Below is the modified rule set:
+
+Rule 1 (Improved):
+If your mark can complete a winning line, place your mark in the corresponding empty cell. If multiple potential winning lines exist, prioritize (iterativel
+y) diagonals, rows over columns and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Block your opponent from winning if they can complete a winning line with their next move. If multiple potential winning lines for the opponent exist, prior
+itize (iteratively) blocking diagonals, rows and columns and the square farthest from the center.
+
+Rule 3 (Enhanced):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 2.
+
+Rule 4 (New):
+If opponent has a corner and you do not have an immediate win or block, place your mark in a vacant corner.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Unchanged):
+If there is an empty corner square opposite an opponent's mark, and no other higher priority rules apply, place your mark in that square.
+
+Rule 7 (Unchanged):
+If all corners are taken, and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square
+. However, if an opponent can create a double threat with their next move, block one of the threats according to Rule 2.
+
+Rule 8 (Reduced):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Improved):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This updated rule set considers cases where the opponent has marked a corner or the center and you don't have an immediate win or block, guiding you to plac
+e your mark in a vacant corner (Rule 4). It also minimizes unnecessarily restrictive rules (Rule 8) while maintaining strategic defensive moves, and maximiz
+ing the potential to win at the next turn or block the opponent from winning."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O & O \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   &   \\
+  &   & X \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+O & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+O &   & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2), (2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+  &   &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0), (2, 2)]
+"
+
+The previous rule set is as follows:
+"Based on the game states given, the current rule set can be improved. Below is the modified rule set:
+
+Rule 1 (Improved):
+If your mark can complete a winning line, place your mark in the corresponding empty cell. If multiple potential winning lines exist, prioritize (iterativel
+y) diagonals, rows over columns and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Block your opponent from winning if they can complete a winning line with their next move. If multiple potential winning lines for the opponent exist, prior
+itize (iteratively) blocking diagonals, rows and columns and the square farthest from the center.
+
+Rule 3 (Enhanced):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 2.
+
+Rule 4 (New):
+If opponent has a corner and you do not have an immediate win or block, place your mark in a vacant corner.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Unchanged):
+If there is an empty corner square opposite an opponent's mark, and no other higher priority rules apply, place your mark in that square.
+
+Rule 7 (Unchanged):
+If all corners are taken, and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square
+. However, if an opponent can create a double threat with their next move, block one of the threats according to Rule 2.
+
+Rule 8 (Reduced):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Improved):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This updated rule set considers cases where the opponent has marked a corner or the center and you don't have an immediate win or block, guiding you to plac
+e your mark in a vacant corner (Rule 4). It also minimizes unnecessarily restrictive rules (Rule 8) while maintaining strategic defensive moves, and maximiz
+ing the potential to win at the next turn or block the opponent from winning."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O & O \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   &   \\
+  &   & X \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+O & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+O &   & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2), (2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+  &   &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0), (2, 2)]
+"
+
+The previous rule set is as follows:
+"Based on the game states given, the current rule set can be improved. Below is the modified rule set:
+
+Rule 1 (Improved):
+If your mark can complete a winning line, place your mark in the corresponding empty cell. If multiple potential winning lines exist, prioritize (iterativel
+y) diagonals, rows over columns and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Block your opponent from winning if they can complete a winning line with their next move. If multiple potential winning lines for the opponent exist, prior
+itize (iteratively) blocking diagonals, rows and columns and the square farthest from the center.
+
+Rule 3 (Enhanced):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 2.
+
+Rule 4 (New):
+If opponent has a corner and you do not have an immediate win or block, place your mark in a vacant corner.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Unchanged):
+If there is an empty corner square opposite an opponent's mark, and no other higher priority rules apply, place your mark in that square.
+
+Rule 7 (Unchanged):
+If all corners are taken, and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square
+. However, if an opponent can create a double threat with their next move, block one of the threats according to Rule 2.
+
+Rule 8 (Reduced):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Improved):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This updated rule set considers cases where the opponent has marked a corner or the center and you don't have an immediate win or block, guiding you to plac
+e your mark in a vacant corner (Rule 4). It also minimizes unnecessarily restrictive rules (Rule 8) while maintaining strategic defensive moves, and maximiz
+ing the potential to win at the next turn or block the opponent from winning."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O & O \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   &   \\
+  &   & X \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+O & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+O &   & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2), (2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+  &   &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0), (2, 2)]
+"
+
+Based on these examples, we can create improved rules which will lead to optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Make a move that will force the opponent to block you. If a current move can create a situation where you have two winning moves in the next turn, and the o
+pponent can only block one, make that move. If multiple such moves exist, prioritize the move creating a diagonal line.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the rest two diagonally facing cells are empty, place
+your mark in one of those empty cells.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Improved):
+If there is an empty corner square opposite an opponent's corner mark, and there doesn't exist a more prioritized rule to apply, place your mark in that emp
+ty cell.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves.
+0.9375 0.4666666666666667
+ 80%|███████████████████████████████████████████▏          | 8/10 [26:03<06:35, 197.66s/it]The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Make a move that will force the opponent to block you. If a current move can create a situation where you have two winning moves in the next turn, and the o
+pponent can only block one, make that move. If multiple such moves exist, prioritize the move creating a diagonal line.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the rest two diagonally facing cells are empty, place
+your mark in one of those empty cells.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Improved):
+If there is an empty corner square opposite an opponent's corner mark, and there doesn't exist a more prioritized rule to apply, place your mark in that emp
+ty cell.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   &   \\
+  & X &   \\
+X & O & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & O & O \\
+X &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X & O &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O & X &   \\
+  & X & O \\
+X & O & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X & O & X \\
+  & O &   \\
+  & X & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0), (1, 2), (2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X &   \\
+O & O & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+"
+
+The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Make a move that will force the opponent to block you. If a current move can create a situation where you have two winning moves in the next turn, and the o
+pponent can only block one, make that move. If multiple such moves exist, prioritize the move creating a diagonal line.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the rest two diagonally facing cells are empty, place
+your mark in one of those empty cells.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Improved):
+If there is an empty corner square opposite an opponent's corner mark, and there doesn't exist a more prioritized rule to apply, place your mark in that emp
+ty cell.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   &   \\
+  & X &   \\
+X & O & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & O & O \\
+X &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X & O &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O & X &   \\
+  & X & O \\
+X & O & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X & O & X \\
+  & O &   \\
+  & X & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0), (1, 2), (2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X &   \\
+O & O & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+"
+
+The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Make a move that will force the opponent to block you. If a current move can create a situation where you have two winning moves in the next turn, and the o
+pponent can only block one, make that move. If multiple such moves exist, prioritize the move creating a diagonal line.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the rest two diagonally facing cells are empty, place
+your mark in one of those empty cells.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Improved):
+If there is an empty corner square opposite an opponent's corner mark, and there doesn't exist a more prioritized rule to apply, place your mark in that emp
+ty cell.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   &   \\
+  & X &   \\
+X & O & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & O & O \\
+X &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X & O &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O & X &   \\
+  & X & O \\
+X & O & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X & O & X \\
+  & O &   \\
+  & X & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0), (1, 2), (2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X &   \\
+O & O & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+"
+
+The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Make a move that will force the opponent to block you. If a current move can create a situation where you have two winning moves in the next turn, and the o
+pponent can only block one, make that move. If multiple such moves exist, prioritize the move creating a diagonal line.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the rest two diagonally facing cells are empty, place
+your mark in one of those empty cells.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Improved):
+If there is an empty corner square opposite an opponent's corner mark, and there doesn't exist a more prioritized rule to apply, place your mark in that emp
+ty cell.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   &   \\
+  & X &   \\
+X & O & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & O & O \\
+X &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X & O &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O & X &   \\
+  & X & O \\
+X & O & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X & O & X \\
+  & O &   \\
+  & X & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0), (1, 2), (2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X &   \\
+O & O & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+"
+
+The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square with the closest distance to the center.
+
+Rule 2 (Improved):
+Make a move that will force the opponent to block you. If a current move can create a situation where you have two winning moves in the next turn, and the o
+pponent can only block one, make that move. If multiple such moves exist, prioritize the move creating a diagonal line.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the rest two diagonally facing cells are empty, place
+your mark in one of those empty cells.
+
+Rule 5 (Unchanged):
+If all corners are taken and the opponent has two marks in a line with an empty square in between, avoid placing your mark in the empty square. Instead, pla
+ce your mark in any unmarked edge square.
+
+Rule 6 (Improved):
+If there is an empty corner square opposite an opponent's corner mark, and there doesn't exist a more prioritized rule to apply, place your mark in that emp
+ty cell.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   &   \\
+  & X &   \\
+X & O & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & O & O \\
+X &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X & O &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   &   \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O & X &   \\
+  & X & O \\
+X & O & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X & O & X \\
+  & O &   \\
+  & X & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 0), (1, 2), (2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X &   \\
+O & O & X \\
+  &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 2)]
+"
+
+Based on these examples, we can create improved rules which will lead to more optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square placing you in closest proximity to forming a direct line of three marks.
+
+Rule 2 (New):
+If the game state allows you to create a double fork in the next move (you have two winning moves and the opponent can only block one), make that move. Prio
+ritize creating a fork that forces the opponent to block a winning move on the next turn.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the diagonally facing corner cell is empty, place your
+ mark there.
+
+Rule 5 (Changed):
+If none of the rules above apply and there are any corners unmarked, mark one. If the corners are marked and there are any edge squares unmarked, mark one.
+Priority is given to squares that block the opponent's next possible win.
+
+Rule 6 (New):
+If there is an empty corner opposite an opponent's mark and applying the above rules does not result in a better move, place your mark in that corner.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves.
+0.875 0.5714285714285714
+ 90%|████████████████████████████████████████████████▌     | 9/10 [29:26<03:19, 199.34s/it]The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to more optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square placing you in closest proximity to forming a direct line of three marks.
+
+Rule 2 (New):
+If the game state allows you to create a double fork in the next move (you have two winning moves and the opponent can only block one), make that move. Prio
+ritize creating a fork that forces the opponent to block a winning move on the next turn.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the diagonally facing corner cell is empty, place your
+ mark there.
+
+Rule 5 (Changed):
+If none of the rules above apply and there are any corners unmarked, mark one. If the corners are marked and there are any edge squares unmarked, mark one.
+Priority is given to squares that block the opponent's next possible win.
+
+Rule 6 (New):
+If there is an empty corner opposite an opponent's mark and applying the above rules does not result in a better move, place your mark in that corner.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   & O \\
+X & X &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   & O \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & X & O \\
+O &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X & O \\
+X & X &   \\
+  &   & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+"
+
+The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to more optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square placing you in closest proximity to forming a direct line of three marks.
+
+Rule 2 (New):
+If the game state allows you to create a double fork in the next move (you have two winning moves and the opponent can only block one), make that move. Prio
+ritize creating a fork that forces the opponent to block a winning move on the next turn.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the diagonally facing corner cell is empty, place your
+ mark there.
+
+Rule 5 (Changed):
+If none of the rules above apply and there are any corners unmarked, mark one. If the corners are marked and there are any edge squares unmarked, mark one.
+Priority is given to squares that block the opponent's next possible win.
+
+Rule 6 (New):
+If there is an empty corner opposite an opponent's mark and applying the above rules does not result in a better move, place your mark in that corner.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   & O \\
+X & X &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   & O \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & X & O \\
+O &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X & O \\
+X & X &   \\
+  &   & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+"
+
+The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to more optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square placing you in closest proximity to forming a direct line of three marks.
+
+Rule 2 (New):
+If the game state allows you to create a double fork in the next move (you have two winning moves and the opponent can only block one), make that move. Prio
+ritize creating a fork that forces the opponent to block a winning move on the next turn.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the diagonally facing corner cell is empty, place your
+ mark there.
+
+Rule 5 (Changed):
+If none of the rules above apply and there are any corners unmarked, mark one. If the corners are marked and there are any edge squares unmarked, mark one.
+Priority is given to squares that block the opponent's next possible win.
+
+Rule 6 (New):
+If there is an empty corner opposite an opponent's mark and applying the above rules does not result in a better move, place your mark in that corner.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   & O \\
+X & X &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   & O \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & X & O \\
+O &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X & O \\
+X & X &   \\
+  &   & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+"
+
+The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to more optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square placing you in closest proximity to forming a direct line of three marks.
+
+Rule 2 (New):
+If the game state allows you to create a double fork in the next move (you have two winning moves and the opponent can only block one), make that move. Prio
+ritize creating a fork that forces the opponent to block a winning move on the next turn.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the diagonally facing corner cell is empty, place your
+ mark there.
+
+Rule 5 (Changed):
+If none of the rules above apply and there are any corners unmarked, mark one. If the corners are marked and there are any edge squares unmarked, mark one.
+Priority is given to squares that block the opponent's next possible win.
+
+Rule 6 (New):
+If there is an empty corner opposite an opponent's mark and applying the above rules does not result in a better move, place your mark in that corner.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   & O \\
+X & X &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   & O \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & X & O \\
+O &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X & O \\
+X & X &   \\
+  &   & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+"
+
+The previous rule set is as follows:
+"Based on these examples, we can create improved rules which will lead to more optimal moves which the previous set of rules missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty square. If multiple such lines exist, prioritize (iteratively) diagonals
+, and the square placing you in closest proximity to forming a direct line of three marks.
+
+Rule 2 (New):
+If the game state allows you to create a double fork in the next move (you have two winning moves and the opponent can only block one), make that move. Prio
+ritize creating a fork that forces the opponent to block a winning move on the next turn.
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or rule 2.
+
+Rule 4 (Improved):
+If the opponent has a corner, you do not have an immediate win or block according to rule 1 or 2, and the diagonally facing corner cell is empty, place your
+ mark there.
+
+Rule 5 (Changed):
+If none of the rules above apply and there are any corners unmarked, mark one. If the corners are marked and there are any edge squares unmarked, mark one.
+Priority is given to squares that block the opponent's next possible win.
+
+Rule 6 (New):
+If there is an empty corner opposite an opponent's mark and applying the above rules does not result in a better move, place your mark in that corner.
+
+Rule 7 (Unchanged):
+If all corners are taken and there exists a line with an empty square, your mark, and an opponent's mark in this order, place your mark in the empty square.
+ However, if an opponent can create a double threat with their next move, block one of the threats.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+
+This revised rule set should result in making more optimal moves."
+
+Use the following information to improve the rule set so that applying it doesn't make the same mistakes.
+"These are examples where applying the previous rule set resulted in an suboptimal move:
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+O &   & O \\
+X & X &   \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+X &   & O \\
+  & O &   \\
+  &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O & X \\
+X & X & O \\
+O &   & X \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 0)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  &   & X \\
+  & O &   \\
+X &   &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(0, 1), (1, 0), (1, 2), (2, 1)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & X & O \\
+X & X &   \\
+  &   & O \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(1, 2)]
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+\begin{bmatrix}
+  & O &   \\
+  & O & X \\
+  & X &   \\
+\end{bmatrix}
+
+Here are the optimal moves instead:
+[(2, 2)]
+"
+
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^B^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[
+[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[B^[[BBased on these examples, we can create a new and improved rule set for mor
+e optimal plays that the previous rules may have missed.
+
+Rule 1 (Improved):
+If there exists a line with an empty square, your mark, and either an empty square or opponent's mark in this order, or if there exists a line with an empty
+ square, opponent's mark, and your mark in this order, place your mark in the empty space. If multiple such lines exist, prioritize (iteratively) diagonals,
+ and the square placing you in closest proximity to forming a line of three marks.
+
+Rule 2 (Improved):
+If another open square on the same line or column with your last move has an extra free adjacent square on the perpendicular direction, especially for the c
+enter square, it will be a better choice. It will give you a chance to create more potential winning situations. Below shows an example where square a with
+free adjacent square will be a better choice than the other square in the same line (denoted as b).
+\begin{bmatrix}
+a & - & b \\
+- & X & O \\
+- & - & - \\
+\end{bmatrix}
+
+Rule 3 (Unchanged):
+If the center cell is unmarked, play there unless the opponent has a corner and you need to apply rule 1 or 2.
+
+Rule 4 (New):
+If the opponent just put a mark or block at a corner and the center is not yet marked, put your mark there.
+
+Rule 5 (New):
+After Rule 2, 3, always put your mark in an empty corner opposite an opponent's corner mark when you do not have a more urgent move according to other rules
+. The opposite corners can be a base for a potential win situation.
+
+Rule 6 (Improved):
+If none of the rules above apply and there are any corners unmarked, mark one. If the corners are marked and there are any edge squares unmarked, mark one.
+Priority is given to squares that form a line with your existing mark.
+
+Rule 7 (Improved):
+If all corners are taken, prefer to place your mark in a center edge square instead of a corner edge square to block an opponent's win or create more potent
+ial win situation for yourself.
+
+Rule 8 (Unchanged):
+If your mark is in the center square and there exist empty edge squares, place your mark in such edge square unless a higher priority rule applies.
+
+Rule 9 (Unchanged):
+If all corners and the center square are taken, place your mark in an empty edge square unless a higher priority rule applies.
+
+Rule 10 (Unchanged):
+If none of the other rules apply, place your mark in any unmarked square. Prioritize squares that share an edge with opponent's marks or have the most adjac
+ent unmarked squares.
+This revised rule set can help in making more optimal moves.
+0.8 0.5833333333333334
+100%|█████████████████████████████████████████████████████| 10/10 [32:23<00:00, 194.33s/it]
+samdo@cs330-assignments:~/cs236_final_project/rule_evolution/evolution$ tmux capture-pane -pS -10000 > ./logs
+

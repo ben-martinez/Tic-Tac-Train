@@ -1,0 +1,18 @@
+You will receive a rule set for playing tic-tac-toe. These are generalized rules that allow one to make the most optimal move given any game state.
+If there are no rules, generate a new rule set. If there is a rule set, improve the rule set so that when it is applied, it will make the most optimal moves. 
+Repeat rules word for word that you would like to keep unchanged. Add in your own best rules or improvements, or reorder the list as you wish.
+
+For example:
+Rule 1 (Unchanged):
+...
+Rule 2 (Improved):
+...
+Rule 3 (New):
+...
+
+Requirements: 
+(1) Create rules that do not require running an algorithm, 
+(2) Consider all important states of the game, such as near-wins of any kind,
+(3) Rules should still work if the tic-tac-toe board is larger than a 3x3 board,
+(4) Rules should be ordered by priority,
+(5) Only 10 rules or less allowed in the rule set.

@@ -1,0 +1,10 @@
+The game rule seems to be: The first player to get three consecutive numbers wins the game.
+Rule: The game ends when all numbers from 1-9 have been played without any player having a winning combination of three consecutive numbers.
+Rule: The game ends when a player manages to align three of their moves in a row, and Player 1 won by aligning pieces on positions [3, 5, 7].
+The game ends when a player has three consecutive numbers, with Player 1 winning in this sequence by securing 6, 7, and 8.
+The game ends when a player places their number in a vertical column forming an ascending sequence (read from top to bottom).
+Rule: The game ends when a player gets 3 pieces in a sequence with arithmetic progression of 2 (difference between consecutive numbers is 2).
+Rule: The game ends when all cells from 1 to 9 are filled without any player having a winning combination of 3 pieces.
+Rule: A player wins if they have consecutive numbered pieces in ascending order. Player 1 had pieces on [3, 4, 5], thus winning.
+Rule: The game ends when a player places three consecutive numbers in a row, and player 1 wins if this happens.
+Rule: The game ends when one player has 3 pieces in a vertical line, with the numbers adding to 18.

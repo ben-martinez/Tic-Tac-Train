@@ -1,0 +1,8 @@
+(0,0) denotes the top left corner of the board. Game state where applying the rule set resulted in an suboptimal move:
+<game-state>
+
+Here is the suboptimal move that was made:
+<suboptimal-move>
+
+Here are the optimal moves instead:
+<optimal-moves>

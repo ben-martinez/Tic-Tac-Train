@@ -1,0 +1,29 @@
+Rule 1 (Unchanged):
+If you have two in a row and the third square in that row is open, place your mark in the third square to win.
+
+Rule 2 (Unchanged):
+Block your opponent's win if they have two in a row and the third square in that row is open.
+
+Rule 3 (Improved):
+If the center square is open, place your marker there unless the corner square opposite to your opponent’s mark is open. However, if there are two open corners, the corner squares should take precedence to occupy instead of the central one.
+
+Rule 4 (Improved): 
+Always prioritize threats in corners over sides. If your opponent has marked in a corner-square, and you have two open opposite corners, it’s optimal to take an opposite corner rather than placing a mark in the center.
+
+Rule 5 (Improved):
+When you have the opportunity to create a setup for a two-in-a-row condition but there isn't a direct win condition, prioritize this over blocking one of your opponent's potential strides towards a two-in-a-row condition.
+
+Rule 6 (Improved):
+If you have a choice between a corner and a non-corner square, always choose the corner. Corners are involved in more winning lines (diagonal enabled) and therefore give you a higher probability of winning.
+
+Rule 7 (New):
+When all corners are occupied and you have no direct wins or blocks, it is important to choose the side middle squares instead of the central one.
+
+Rule 8 (New):
+If the board state is open and you have the first move, choose a corner for setting up multiple winning opportunities.
+
+Rule 9 (New):
+If your opponent takes a non-central, non-corner square as their first move, it is optimal to take the center square.
+
+Rule 10 (New):
+When no other rules apply, play the square that is involved in the highest number of unblocked lines still open for play. This generally prioritizes center > corner > edge. This rule has been generalized for larger than 3x3 boards.

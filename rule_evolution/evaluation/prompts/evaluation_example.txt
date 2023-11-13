@@ -1,0 +1,6 @@
+Below is the current game state.
+
+<game-state>
+
+You are the player with marker <current-player-marker>. 
+State your finalized move in at signs: @row,col@ where row and col are 1-indexed. Please do not state any other move in this format.

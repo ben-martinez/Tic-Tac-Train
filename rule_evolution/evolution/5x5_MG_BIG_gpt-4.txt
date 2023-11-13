@@ -1,0 +1,2 @@
+FINAL output accuracy: 0.8642857142857142, best move accuracy: 0.3651236444714706
+Previously it was formatting_accuracy=0.8333333333333334, best_move_accuracy=0.8666666666666667

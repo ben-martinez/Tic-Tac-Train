@@ -1,0 +1,9 @@
+Below is a set of definitions you can leverage to win tic-tac-toe:
+"<rule-library>"
+
+Below are the markers for the game.
+Empty: <empty-marker>
+Player 1: <player1-marker>
+Player 2: <player2-marker>
+
+You will be given a game's starting state as a matrix and asked to make the next move. Use the set of definitions precisely - showing your work for every step for every definition - and win as a first priority, and prevent the opponent from winning as a second priority.
